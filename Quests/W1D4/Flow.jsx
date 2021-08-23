@@ -85,7 +85,7 @@ function Provider(props) {
     async () => {
         const transactionId = await fcl.send([
           fcl.transaction`
-            impoort LocalArtist from ${process.env.REACT_APP_ARTIST_CONTRACT_HOST_ACCOUNT}
+            import LocalArtist from ${process.env.REACT_APP_ARTIST_CONTRACT_HOST_ACCOUNT}
 
             transaction() {
               prepare(account: AuthAccount) {
@@ -114,7 +114,7 @@ function Provider(props) {
     async () => {
         const transactionId = await fcl.send([
           fcl.transaction`
-          import LocalArtist frp, ${process.env.REACT_APP_ARTIST_CONTRACT_HOST_ACCOUNT}
+          import LocalArtist from ${process.env.REACT_APP_ARTIST_CONTRACT_HOST_ACCOUNT}
 
           transaction() {
             prepare(account: AuthAccount) {
@@ -241,7 +241,7 @@ function Provider(props) {
         fcl.limit(9999)
       ]).then(fcl.decode)
 
-      return fcl.tx(fcl.transactionId).onceSealed();
+      return fcl.tx(transactionId).onceSealed();
     },
     []
   );
